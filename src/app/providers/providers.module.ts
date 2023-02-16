@@ -13,6 +13,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
+import { ContactUsComponent } from './provider-footer/contact-us/contact-us.component';
+import { EmailResultsComponent } from './provider-footer/email-results/email-results.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { MatSelectModule } from "@angular/material/select";
     ProvidersComponent,
     ProviderSearchComponent,
     ProviderListComponent,
-    ProviderFooterComponent
+    ProviderFooterComponent,
+    ContactUsComponent,
+    EmailResultsComponent
   ],
   imports: [
     CommonModule,
