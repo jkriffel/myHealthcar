@@ -5,6 +5,7 @@ export enum HealthcareServices {
   psychiatry = 'psychiatry',
   ent = 'ent',
   allergies = 'allergies',
+  labs = 'labs', // STI testing
   cardiology = 'cardiology',
   pediatrics = 'pediatrics',
   gynecology = 'gynecology',
