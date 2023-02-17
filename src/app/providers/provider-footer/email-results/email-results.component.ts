@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-email-results',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class EmailResultsComponent {
 
+  protected email = ''
+
+  constructor(
+    public dialogRef: MatDialogRef<EmailResultsComponent>) {
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

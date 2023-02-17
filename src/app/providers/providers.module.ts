@@ -15,6 +15,8 @@ import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { ContactUsComponent } from './provider-footer/contact-us/contact-us.component';
 import { EmailResultsComponent } from './provider-footer/email-results/email-results.component';
+import { FormsModule } from "@angular/forms";
+import { MatDialogModule } from "@angular/material/dialog";
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { EmailResultsComponent } from './provider-footer/email-results/email-res
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    MatDialogModule
   ]
 })
 export class ProvidersModule {

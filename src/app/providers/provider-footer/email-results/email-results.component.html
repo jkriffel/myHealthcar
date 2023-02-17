@@ -1,1 +1,17 @@
-<p>email-results works!</p>
+<div class="above-input">
+  <mat-icon aria-hidden="true">send</mat-icon>
+  <h1 mat-dialog-title>Thanks for using HealthcAR!</h1>
+  <p class="explanation">If you'd like a copy of these resources please enter your email below.</p>
+</div>
+
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="email">
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Send</button>
+</div>
