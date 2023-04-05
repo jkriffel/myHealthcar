@@ -1,10 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
-import { HealthcareProvider } from "../interfaces/healthcare-provider.interface";
-import { ProvidersService } from "../providers.service";
-import { MatTableDataSource } from "@angular/material/table";
-import { map, Observable } from "rxjs";
-import { MatPaginator } from "@angular/material/paginator";
-import { MatSort } from "@angular/material/sort";
+import {Component, ViewChild} from '@angular/core';
+import {HealthcareProvider} from "../interfaces/healthcare-provider.interface";
+import {ProvidersService} from "../providers.service";
+import {MatTableDataSource} from "@angular/material/table";
+import {map, Observable} from "rxjs";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
 
 @Component({
   selector: 'app-provider-list',
@@ -13,10 +13,10 @@ import { MatSort } from "@angular/material/sort";
 })
 export class ProviderListComponent {
 
-  displayedColumns = ["name", "description", "url", "zipCode"];
+  displayedColumns = ["name", "description", "url", "zipcode"];
 
   healthcareProvidersAsMatTableDataSource$: Observable<MatTableDataSource<HealthcareProvider>> =
-    this.providersService.healthcareProvider$.pipe(
+    this.providersService.getHealthcareProviders().pipe(
       map((providers) => {
         const dataSource = this.dataSource;
         dataSource.data = providers;
@@ -33,10 +33,12 @@ export class ProviderListComponent {
     }
   };
 
-  @ViewChild(MatSort) set sort(sorter:MatSort) {
-    if (sorter) this.dataSource.sort = sorter;
+  @ViewChild(MatSort) set sort(sorter: MatSort) {
+    if (sorter) {
+      this.dataSource.sort = sorter;
+    }
   }
 
-  constructor(private providersService: ProvidersService) {
+  constructor(public providersService: ProvidersService) {
   }
 }
