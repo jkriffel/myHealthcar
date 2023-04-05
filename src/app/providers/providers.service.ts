@@ -56,8 +56,6 @@ export class ProvidersService {
   emailSearchResults(formData: string): Observable<any> {
     const url = `${this.#baseUrl}/providers/email`
     this.emailSearchResultsFormData.emailAddress = formData
-    // return this.http.post<any>(url,  {'zipcode':'72555', 'emailAddress':'minori6kaemon@gmail.com'});
-    // return this.http.post<any>(url,  JSON.stringify({'zipcode':'72555', 'emailAddress':'minori6kaemon@gmail.com'}));
     return this.http.post<any>(url, this.emailSearchResultsFormData);
   }
 }
