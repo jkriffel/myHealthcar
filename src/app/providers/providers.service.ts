@@ -31,7 +31,6 @@ export class ProvidersService {
   updateHealthcareProviders(formData: ProviderSearchInterface) {
     this.isTableLoading = true;
     const url = `${this.#baseUrl}/providers/get-providers`
-    // this.http.get<HealthcareProvider[]>('assets/mock-providers.json', {params: formData as any})
     this.http.get<HealthcareProvider[]>(url, {params: formData as any})
       .subscribe({
           next: (result) => {
