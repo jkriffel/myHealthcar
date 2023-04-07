@@ -4,6 +4,19 @@
   "newProjectRoot": "projects",
   "projects": {
     "HealthcAR": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es": {
+            "translation": "src/locale/messages.es.xlf",
+            "baseHref": "es"
+          },
+          "mh": {
+            "translation": "src/locale/messages.mh.xlf",
+            "baseHref": "mh"
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +26,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -31,12 +44,18 @@
             "scripts": []
           },
           "configurations": {
+            "production-localize": {
+              "localize": [
+                "en-US"
+              ],
+              "deleteOutputPath": false
+            },
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -53,6 +72,21 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "en-US": {
+              "localize": [
+                "en"
+              ]
+            },
+            "es": {
+              "localize": [
+                "es"
+              ]
+            },
+            "mh": {
+              "localize": [
+                "mh"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -65,6 +99,15 @@
             },
             "development": {
               "browserTarget": "HealthcAR:build:development"
+            },
+            "en-US": {
+              "browserTarget": "HealthcAR:build:en-US"
+            },
+            "es": {
+              "browserTarget": "HealthcAR:build:es"
+            },
+            "mh": {
+              "browserTarget": "HealthcAR:build:mh"
             }
           },
           "defaultConfiguration": "development"
