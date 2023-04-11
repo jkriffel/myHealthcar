@@ -46,7 +46,9 @@
           "configurations": {
             "production-localize": {
               "localize": [
-                "en-US"
+                "en-US",
+                "es",
+                "mh"
               ],
               "deleteOutputPath": false
             },
