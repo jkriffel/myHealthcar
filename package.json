@@ -8,8 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build-github": "ng build --output-path docs --base-href https://HealthcARWebsite.github.io/",
-    "build-localized": "ng build --configuration=production-localize",
-    "build-all": "ng build --configuration=production-localize"
+    "build-localized": "ng build --configuration=production-localize"
   },
   "private": true,
   "dependencies": {
