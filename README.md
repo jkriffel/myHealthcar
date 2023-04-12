@@ -17,3 +17,6 @@ Run `ng serve --configuration=es` for Spanish or `ng serve --configuration=mh` f
 Run `npm run build-localized` to build the project with localizations. The builds will be stored in the `dist/` directory.
 
 Run `npm run build-github` to build an English version of the project for GitHub Pages. The build will be stored in the `docs/` directory.
+NOTE: You MUST copy and paste the `index.html` file in `docs/` and rename it `404.html` for GitHub Pages.
+
+Run `npm run build` to run both of the previous scripts in parallel.
