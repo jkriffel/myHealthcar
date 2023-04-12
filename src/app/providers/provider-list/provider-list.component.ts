@@ -18,6 +18,9 @@ export class ProviderListComponent implements OnInit {
   healthcareProvidersAsMatTableDataSource$: Observable<MatTableDataSource<HealthcareProvider>> =
     this.providersService.getHealthcareProviders().pipe(
       map((providers) => {
+        providers.map((provider: HealthcareProvider) => {
+          provider['hostname'] = new URL(provider.url).hostname;
+        })
         const dataSource = this.dataSource;
         dataSource.data = providers;
         return dataSource;
@@ -61,4 +64,6 @@ export class ProviderListComponent implements OnInit {
       this.displayedColumns = ["name", "description", "zipcode"]
     }
   }
+
+  protected readonly URL = URL;
 }

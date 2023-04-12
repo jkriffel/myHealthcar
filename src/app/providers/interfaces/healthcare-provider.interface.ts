@@ -5,6 +5,7 @@ export interface HealthcareProvider {
   description: string;
   url: string;
   zipCode: string;
+  hostname?: string;
   // services: HealthcareServices[];
   // TODO: implement services property with ProviderList
 }
